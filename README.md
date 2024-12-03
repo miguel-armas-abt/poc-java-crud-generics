@@ -1,5 +1,3 @@
-# CRUD genérico con listas
+# CRUD genérico
 
-Este proyecto implementa un CRUD genérico con listas y aplica los siguientes patrones de diseño:
-
-- Repository
+Este proyecto implementa un CRUD genérico con listas, archivos CSV y reflexión.

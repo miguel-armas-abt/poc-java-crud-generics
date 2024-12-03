@@ -1,24 +1,29 @@
-package com.demo.poc.commons;
+package com.demo.poc.commons.repository.list;
 
+import com.demo.poc.commons.repository.CrudRepository;
+import com.demo.poc.commons.repository.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CrudRepository<T extends Entity> {
+public class ListRepository<T extends Entity> implements CrudRepository<T> {
 
   private List<T> elements;
 
-  public CrudRepository(List<T> initialElements) {
+  public ListRepository(List<T> initialElements) {
     elements = new ArrayList<>(initialElements);
   }
 
+  @Override
   public void add(T element) {
     this.elements.add(element);
   }
 
+  @Override
   public List<T> findAll() {
     return this.elements;
   }
 
+  @Override
   public T findById(Long id) {
     if(id == null)
       throw new IllegalArgumentException("Id must not be null");
@@ -38,6 +43,7 @@ public class CrudRepository<T extends Entity> {
     return selected;
   }
 
+  @Override
   public void deleteById(Long id) {
     T searchedElement = this.findById(id);
 
