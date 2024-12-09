@@ -2,46 +2,9 @@ package com.demo.poc.commons.repository.csv;
 
 import com.demo.poc.commons.repository.Entity;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.csv.CSVRecord;
 
 public class CsvReflectionMapper {
-
-    private static final String EMPTY = "";
-
-    public static <T extends Entity> List<String> getRecordValues(Class<T> entityType, T element, List<String> headers) {
-        try {
-            List<String> recordValues = new ArrayList<>();
-            for (String header : headers) {
-                Field field = getFieldByName(entityType, header);
-                if (field != null) {
-                    field.setAccessible(true);
-                    Object value = field.get(element);
-                    recordValues.add(value != null ? value.toString() : EMPTY);
-                } else {
-                    recordValues.add(EMPTY);
-                }
-            }
-
-            return recordValues;
-        } catch (Exception exception) {
-            throw new IllegalArgumentException("Error generating record: " + exception.getMessage(), exception);
-        }
-    }
-
-    private static Field getFieldByName(Class<?> entityType, String fieldName) {
-        Class<?> currentClass = entityType;
-        while (currentClass != null) {
-            for (Field field : currentClass.getDeclaredFields()) {
-                String fieldNameInSnakeCase = camelToUpperSnake(field.getName());
-                if (fieldNameInSnakeCase.equalsIgnoreCase(fieldName))
-                    return field;
-            }
-            currentClass = currentClass.getSuperclass();
-        }
-        return null;
-    }
 
     public static <T extends Entity> T assignFieldsAndGet(Class<T> entityType, CSVRecord record) {
         try {

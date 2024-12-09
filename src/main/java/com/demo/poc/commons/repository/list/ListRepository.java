@@ -14,11 +14,6 @@ public class ListRepository<T extends Entity> implements CrudRepository<T> {
   }
 
   @Override
-  public void add(T element) {
-    this.elements.add(element);
-  }
-
-  @Override
   public List<T> findAll() {
     return this.elements;
   }
@@ -43,17 +38,4 @@ public class ListRepository<T extends Entity> implements CrudRepository<T> {
     return selected;
   }
 
-  @Override
-  public void deleteById(Long id) {
-    T searchedElement = this.findById(id);
-
-     List<T> modifiedList = new ArrayList<>();
-
-     for (T element: this.elements) {
-       if(!id.equals(searchedElement.getId()))
-         modifiedList.add(element);
-     }
-
-     this.elements = modifiedList;
-  }
 }
