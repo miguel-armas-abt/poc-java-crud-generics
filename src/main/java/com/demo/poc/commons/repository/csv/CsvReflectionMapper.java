@@ -39,16 +39,19 @@ public class CsvReflectionMapper {
     }
 
     private static Object parseValue(Class<?> type, String value) {
-        if (type == Long.class)
+        if (type == Long.class || type == long.class)
             return Long.parseLong(value);
 
-        if (type == Integer.class)
+        if (type == Integer.class || type == int.class)
             return Integer.parseInt(value);
 
-        if (type == Double.class)
+        if (type == Double.class || type == double.class)
             return Double.parseDouble(value);
 
-        if (type == Boolean.class)
+        if (type == Float.class || type == float.class)
+            return Float.parseFloat(value);
+
+        if (type == Boolean.class || type == boolean.class)
             return Boolean.parseBoolean(value);
 
         return value;
