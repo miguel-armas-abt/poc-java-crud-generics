@@ -17,7 +17,7 @@ public class CsvFileReader {
       CSVParser csvParser = new CSVParser(reader, csvFormat);
       return csvParser.getRecords();
     } catch (Exception exception) {
-      throw new IllegalArgumentException("Error reading CSV: " + exception.getMessage(), exception);
+      throw new RuntimeException("Error reading CSV: " + exception.getMessage(), exception);
     }
   }
 

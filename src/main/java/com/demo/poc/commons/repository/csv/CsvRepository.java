@@ -28,11 +28,13 @@ public class CsvRepository<T extends Entity> implements CrudRepository<T> {
 
     @Override
     public T findById(Long id) {
-        List<T> allEntities = findAll();
-        for (T entity: allEntities) {
+        if(id == null)
+            throw new IllegalArgumentException("Id must not be null");
+
+        for (T entity: this.findAll()) {
             if(entity.getId().equals(id))
                 return entity;
         }
-        throw new IllegalArgumentException("No such element");
+        throw new IllegalArgumentException("No such element with id " + id);
     }
 }

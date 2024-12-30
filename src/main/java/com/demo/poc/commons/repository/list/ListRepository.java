@@ -7,15 +7,15 @@ import java.util.List;
 
 public class ListRepository<T extends Entity> implements CrudRepository<T> {
 
-  private List<T> elements;
+  private final List<T> entities;
 
   public ListRepository(List<T> initialElements) {
-    elements = new ArrayList<>(initialElements);
+    entities = new ArrayList<>(initialElements);
   }
 
   @Override
   public List<T> findAll() {
-    return this.elements;
+    return this.entities;
   }
 
   @Override
@@ -23,19 +23,10 @@ public class ListRepository<T extends Entity> implements CrudRepository<T> {
     if(id == null)
       throw new IllegalArgumentException("Id must not be null");
 
-    T selected = null;
-    for (T element: this.elements) {
-      if(id.equals(element.getId())) {
-        selected = element;
-        break;
-      }
+    for (T entity: this.findAll()) {
+      if(id.equals(entity.getId()))
+        return entity;
     }
-
-    if (selected == null) {
-      throw new IllegalArgumentException("Element with id '" + id + "' not found");
-    }
-
-    return selected;
+    throw new IllegalArgumentException("No such element with id " + id);
   }
-
 }

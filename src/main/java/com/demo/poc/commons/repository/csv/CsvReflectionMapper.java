@@ -16,7 +16,7 @@ public class CsvReflectionMapper {
             }
             return entity;
         } catch (Exception exception) {
-            throw new IllegalArgumentException("Unable to assign field: " + exception.getMessage());
+            throw new RuntimeException("Unable to assign field: " + exception.getMessage());
         }
     }
 
