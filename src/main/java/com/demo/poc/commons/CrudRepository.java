@@ -1,4 +1,4 @@
-package com.demo.poc.commons.repository;
+package com.demo.poc.commons;
 
 import java.util.List;
 

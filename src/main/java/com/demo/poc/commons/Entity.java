@@ -1,4 +1,4 @@
-package com.demo.poc.commons.repository;
+package com.demo.poc.commons;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

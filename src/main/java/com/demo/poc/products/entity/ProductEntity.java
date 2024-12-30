@@ -1,6 +1,6 @@
-package com.demo.poc.products;
+package com.demo.poc.products.entity;
 
-import com.demo.poc.commons.repository.Entity;
+import com.demo.poc.commons.Entity;
 import lombok.*;
 
 @ToString

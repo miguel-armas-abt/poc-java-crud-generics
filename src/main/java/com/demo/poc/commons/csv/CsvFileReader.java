@@ -1,4 +1,4 @@
-package com.demo.poc.commons.repository.csv;
+package com.demo.poc.commons.csv;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,7 +1,7 @@
-package com.demo.poc.commons.repository.csv;
+package com.demo.poc.commons.csv;
 
-import com.demo.poc.commons.repository.CrudRepository;
-import com.demo.poc.commons.repository.Entity;
+import com.demo.poc.commons.CrudRepository;
+import com.demo.poc.commons.Entity;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
-package com.demo.poc.commons.repository.csv;
+package com.demo.poc.commons.csv;
 
-import com.demo.poc.commons.repository.Entity;
+import com.demo.poc.commons.Entity;
 import java.lang.reflect.Field;
 import org.apache.commons.csv.CSVRecord;
 

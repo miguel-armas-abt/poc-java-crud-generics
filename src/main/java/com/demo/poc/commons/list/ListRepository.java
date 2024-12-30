@@ -1,7 +1,7 @@
-package com.demo.poc.commons.repository.list;
+package com.demo.poc.commons.list;
 
-import com.demo.poc.commons.repository.CrudRepository;
-import com.demo.poc.commons.repository.Entity;
+import com.demo.poc.commons.CrudRepository;
+import com.demo.poc.commons.Entity;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,8 @@
-package com.demo.poc.products;
+package com.demo.poc.products.repository;
 
-import com.demo.poc.commons.repository.list.ListRepository;
+import com.demo.poc.commons.list.ListRepository;
+import com.demo.poc.products.entity.ProductEntity;
+
 import java.util.Arrays;
 import java.util.List;
 

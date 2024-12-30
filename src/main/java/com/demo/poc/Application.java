@@ -1,10 +1,10 @@
 package com.demo.poc;
 
-import com.demo.poc.commons.repository.CrudRepository;
-import com.demo.poc.products.ProductCsvRepository;
-import com.demo.poc.products.ProductEntity;
+import com.demo.poc.commons.CrudRepository;
+import com.demo.poc.products.repository.ProductCsvRepository;
+import com.demo.poc.products.entity.ProductEntity;
 
-public class ProductApplication {
+public class Application {
 
   public static void main(String[] args) {
 //    CrudRepository<ProductEntity> productRepository = new ProductListRepository();

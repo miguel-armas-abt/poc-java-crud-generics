@@ -1,6 +1,7 @@
-package com.demo.poc.products;
+package com.demo.poc.products.repository;
 
-import com.demo.poc.commons.repository.csv.CsvRepository;
+import com.demo.poc.commons.csv.CsvRepository;
+import com.demo.poc.products.entity.ProductEntity;
 
 public class ProductCsvRepository extends CsvRepository<ProductEntity> {
 
