@@ -25,16 +25,4 @@ public class CsvRepository<T extends Entity> implements CrudRepository<T> {
         }
         return entities;
     }
-
-    @Override
-    public T findById(Long id) {
-        if(id == null)
-            throw new IllegalArgumentException("Id must not be null");
-
-        for (T entity: this.findAll()) {
-            if(entity.getId().equals(id))
-                return entity;
-        }
-        throw new IllegalArgumentException("No such element with id " + id);
-    }
 }

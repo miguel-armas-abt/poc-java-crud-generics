@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop Lenovo IdeaPad 320",
+    "price": 1999.99
+  },
+  {
+    "id": 2,
+    "name": "Iphone 13S Pro Max",
+    "price": 5500.00
+  },
+  {
+    "id": 3,
+    "name": "Mouse Ryzen",
+    "price": 249.99
+  }
+]
